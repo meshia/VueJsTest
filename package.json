@@ -1,0 +1,45 @@
+{
+  "name": "meshi",
+  "version": "1.0.0",
+  "description": "Simple gulp boilerplate ready to use for dev and distribution.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp boilerplate",
+    "less",
+    "bootstrap grid",
+    "less compiler",
+    "Purify css",
+    "image minification",
+    "autoprefixer",
+    "developing",
+    "production",
+    "distribution"
+  ],
+  "author": "Piotr Kaluza",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-server-livereload": "^1.9.1",
+    "gulp-watch": "^4.3.10",
+    "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "bootstrap-grid": "^2.0.1",
+    "jquery": "^3.1.1",
+    "vue": "^2.6.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://TravelfactoryCandidate4@bitbucket.org/TravelfactoryCandidate4/front-end-developer-test.git"
+  },
+  "homepage": "https://bitbucket.org/TravelfactoryCandidate4/front-end-developer-test#readme"
+}

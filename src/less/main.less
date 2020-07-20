@@ -1,0 +1,110 @@
+@import "variables";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans&.css);
+@import "font-awesome-4.7.0/less/font-awesome.less";
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: @base-background;
+  color: @base-text;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #app { // Mobile & Tablet First
+    max-width: @desktop-max-width;
+    font-size:14px;
+    .contactList {
+      list-style: none;
+      width:100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      li {
+        display: flex;
+        flex-direction: row;
+        width:100%;
+        background-color: @item-background;
+        border: 1px solid @item-borders;
+        margin:15px;
+        padding: 15px;
+        div {
+          display: flex;
+          flex-direction: column;
+          margin: 0 15px;
+        }
+        .title, .name, .company {
+          font-size:17px;
+          font-weight: 700;
+        }
+
+        .leftWrapepr {
+          align-items: center;
+          img{
+            border-radius: 50%;
+            margin-bottom:8px;
+          }
+          
+        }
+        .middleWrapper {
+          .location {
+            margin: 7px 0;
+          }
+          .company {
+            font-size:14px;
+          }
+        }
+        .rightWrapper {
+          font-family: FontAwesome;
+          flex-direction: row;
+          align-items: flex-end;
+          margin-left:auto;
+          i {
+            padding: 10px;
+            color:@item-icons;
+            cursor: pointer;
+          }
+        }
+        &.addWrapper {
+          border: none;
+          background-color: transparent;
+          justify-content: center;
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          input {
+            border: none;
+            margin: 5px;
+            padding-left: 5px;
+            font-size: 20px;
+          }
+          .addNewContact {
+            font-size:27px;
+            color: @plus-btn;
+            border: 1px solid @plus-btn;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+
+  // Desktop
+  @media (min-width: @tablet) {
+    .contactList {
+      li {
+        width:calc(100% / 3.7); // therd of app width retract the margins
+      }
+    }
+  }
+  }
+}

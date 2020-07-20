@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+
+    <title>Contacts</title>
+    <script src="https://maps.googleapis.com/maps/api/geocode/json?address=paris&key=AIzaSyDKvvBgAkSCugEbXckutuAFuqPzthsCnJ8" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/main.css?v=$BUILD_VERSiON$">
+
+</head>
+    <body>
+        <div id="app">
+            <ol class="contactList">
+                <li v-for="contact in contacts">
+                    <div class="leftWrapepr">
+                        <img v-bind:src="contact.img"/>
+                        <span class="title">{{ contact.title }}</span>
+                    </div>
+                    <div class="middleWrapper">
+                        <span class="name">{{ contact.name }}</span>
+                        <span class="location">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>{{ contact.location }}</span></span>
+                        <span class="company">{{ contact.company }}</span>
+                        <span class="address">{{ contact.address1 }}</span>
+                        <span class="address">{{ contact.address2 }}</span>
+                        <span class="phone">{{ contact.phone }}</span>
+                    </div>
+                    <div class="rightWrapper">
+                        <span class="edit" v-on:click="editContact(contact)"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                        <span class="delete" v-on:click="deleteContact(contact)"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                    </div>
+                </li>
+                <li class="addWrapper">
+                        <span>Name<input type="text" id="newName" title="name"></span>
+                        <span>Company<input type="text" id="newCompany" title="company"></span>
+                        <span>Title<input type="text" id="newTitle" title="title"></span>
+                        <span>Address 1<input type="text" id="newAddress1" title="address 1"></span>
+                        <span>Address 2<input type="text" id="newAddress2" title="address 2"></span>
+                        <span>Phone<input type="number" id="newPhone" title="phone"></span>
+                    <span class="addNewContact" v-on:click="addContact()">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </span>
+                </li>
+              </ol>
+          </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
